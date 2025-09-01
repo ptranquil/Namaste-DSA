@@ -1,6 +1,8 @@
 /**
  * 19. Remove Nth Node From End of List
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+ * 
+ * Whenever there is a delete operation in LL, always think about the sentinel node
  */
 // Definition for singly-linked list
 
