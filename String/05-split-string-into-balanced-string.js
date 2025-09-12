@@ -25,3 +25,18 @@ var balancedStringSplit = function (s) {
 
 let s = 'RLRRLLRLRL'
 console.log(balancedStringSplit(s))
+
+// usig single variable: A bit optimal
+var balancedStringSplit = function (s) {
+    let count=0;
+    let valid = 0;
+
+    for (let chr of s) {
+        if (chr == 'R') count++;
+        else if (chr == 'L') count--;
+        if (count == 0) {
+            valid++
+        }
+    }
+    return valid;
+};
