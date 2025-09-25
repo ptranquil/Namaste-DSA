@@ -21,6 +21,7 @@ var MyStack = function () {
  * @param {number} x
  * @return {void}
  */
+// TC: O(1)
 MyStack.prototype.push = function (x) {
     this.q1.push(x);
 };
@@ -28,6 +29,7 @@ MyStack.prototype.push = function (x) {
 /**
  * @return {number}
  */
+// TC: Worst Case: O(n), Average: O(1) as we are not miving each time
 MyStack.prototype.pop = function () {
     // Pushing all the element in q2 from q1 except the last one
     // rreturning the last element and reassigning q1 to q2 and q2 to q1
@@ -45,6 +47,7 @@ MyStack.prototype.pop = function () {
 /**
  * @return {number}
  */
+// TC: Worst Case: O(n), Average: O(1) as we are not miving each time
 MyStack.prototype.top = function () {
     // Pushing all the element in q2 from q1
     // Storingthe last element to return and reassigning q1 to q2 and q2 to q1
@@ -62,6 +65,7 @@ MyStack.prototype.top = function () {
 /**
  * @return {boolean}
  */
+//O(1)
 MyStack.prototype.empty = function () {
     return this.q1.length === 0;
 };
