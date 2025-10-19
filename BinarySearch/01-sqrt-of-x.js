@@ -13,6 +13,7 @@ var mySqrt = function(x) {
     let right = Math.floor(x/2);
     while(left <= right){
         let mid = Math.floor((left+right)/2);
+        // let mid = Math.floor(left+((right-left)/2));
         let val = mid**2;
         if(val == x){
             return Math.floor(mid);
