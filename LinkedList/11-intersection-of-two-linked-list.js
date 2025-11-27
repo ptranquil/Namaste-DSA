@@ -32,3 +32,54 @@ var getIntersectionNode = function(headA, headB) {
     }
     return null;
 };
+
+// using 2 pointer approacg
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+var getIntersectionNode = function(headA, headB) {
+    let l1 = 0;
+    let l2 = 0;
+    let curr = headA;
+    while(curr.next){
+        l1++;
+        curr = curr.next;
+    }
+
+    curr = headB;
+    while(curr.next){
+        l2++;
+        curr = curr.next;
+    }
+
+    let diff = Math.abs(l1-l2);
+    let p1 = headA;
+    let p2 = headB;
+    if(l1 > l2){
+        while(diff--){
+           p1 = p1.next; 
+        }
+    } else {
+        while(diff--){
+           p2 = p2.next; 
+        }
+    }
+
+    while(p1.next && p2.next){
+        if(p1 == p2){
+            return p1;
+        }
+        p1 = p1.next;
+        p2 = p2.next;
+    }
+
+    if(p1 == p2){
+        return p1;
+    }
+};
