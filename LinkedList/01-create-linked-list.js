@@ -98,7 +98,7 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
          * handling corner cases
          * If the head is null, then head.next will throw error
          */
-        this.head = this.head.next;
+        this.head = this.head.next; 
     } else {
 
         let curr = this.head;

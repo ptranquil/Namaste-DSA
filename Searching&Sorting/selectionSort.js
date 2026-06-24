@@ -19,7 +19,7 @@ selectionsort(arr)
 
 /**
  * Approach: To remember
- * Select the min element and put it at the first position by adjacent swapping
+ * Selection Sort repeatedly "selects the smallest element from the unsorted portion of the array and places it at the first unsorted position"
  * TC: O(n^2)
  * SC: O(1)
  * 

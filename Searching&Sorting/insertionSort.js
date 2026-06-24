@@ -23,5 +23,7 @@ console.log(insertionSort(arr))
  * TC: O(n^2)
  * SC: O(1)
  * 
+ * DEF: Insertion Sort repeatedly takes the first element from the unsorted portion and inserts it into its correct position in the sorted portion of the array.
+ * 
  * To remember: Putting playing cards in its correct position one by one
  */

@@ -30,6 +30,8 @@ Approach:
     To make it more customizable
         Check for the swapped flag, after the second loop if it didnt change that means all the element are already in sorted order
     
+    Def: Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order, causing the largest element in the unsorted portion to move to its correct position at the end in each pass.
+
     TC: O(n^2)
     SC: O(1)
  */
