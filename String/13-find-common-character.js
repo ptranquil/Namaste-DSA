@@ -32,3 +32,18 @@ var commonChars = function(words) {
 
 let words = ["bella","label","roller"]
 console.log(commonChars(words))
+
+
+/**
+Complexity
+
+Let:
+    n = number of words
+    m = average length of a word
+
+Time
+    Building frequency arrays: O(n × m)
+    Updating the 26 letters: O(26 × n)
+    Building the answer: O(26)
+    Overall: O(n × m) since 26 is a constant.
+ */

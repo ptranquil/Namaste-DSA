@@ -57,3 +57,42 @@ var isPalindrome = function(s) {
     }
     return true;
 };
+
+
+//Without regex
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    s = s.toLowerCase();
+
+    function isAlphaNumeric(ch) {
+        const code = ch.charCodeAt(0);
+
+        return (
+            (code >= 48 && code <= 57) ||   // 0-9
+            (code >= 97 && code <= 122)     // a-z
+        );
+    }
+
+    let left = 0;
+    let right = s.length-1;
+    while(left<=right){
+        // main logic
+        if(!isAlphaNumeric(s[left])) {
+            left++;
+            continue;
+        } else if (!isAlphaNumeric(s[right])){
+            right--;
+            continue;
+        } else {
+            if(s[left] != s[right]){
+                return false;
+            }
+        }
+        left++;
+        right--;
+    }
+    return true;
+};

@@ -83,3 +83,20 @@ var getIntersectionNode = function(headA, headB) {
         return p1;
     }
 };
+
+
+// Simplest O(m+n) where m & n is the length of the LL and O(1) SC 
+// I use two pointers. When a pointer reaches the end of its list, I redirect it to the head of the other list. 
+// This equalizes the distance traveled by both pointers. If an intersection exists, 
+// they meet there; otherwise both become null at the same time.
+var getIntersectionNode = function(headA, headB) {
+    let pA = headA;
+    let pB = headB;
+
+    while (pA != pB){
+        pA = pA ? pA.next : headB;
+        pB = pB ? pB.next : headA;
+    }
+
+    return pA;
+};
