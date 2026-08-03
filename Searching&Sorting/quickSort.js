@@ -50,3 +50,7 @@ APPROACH:
     1. Pick a pivot and place it in its correct place
     2. Smaller on the left and larger on the right
  */
+
+// NOTE
+// A stable sorting alorithm is the one which maintain the relative order of the element if they are same
+// Heap Sort is not a stable sorting algorithm
