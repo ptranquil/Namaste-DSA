@@ -54,3 +54,56 @@ APPROACH:
 // NOTE
 // A stable sorting alorithm is the one which maintain the relative order of the element if they are same
 // Heap Sort is not a stable sorting algorithm
+
+
+
+var sortArray = function (nums) {
+    return quickSort(nums, 0, nums.length - 1);
+};
+
+function quickSort(arr, start, end) {
+    if (start < end) {
+        let pI = makePartition(arr, start, end);
+        quickSort(arr, start, pI - 1);
+        quickSort(arr, pI + 1, end);
+    }
+    return arr;
+}
+
+function makePartition(arr, startIdx, endIdx) {
+    let randomIdx =
+        Math.floor(Math.random() * (endIdx - startIdx + 1)) + startIdx;
+    [arr[randomIdx], arr[endIdx]] =
+        [arr[endIdx], arr[randomIdx]];
+    let pivot = arr[endIdx];
+
+    let pos = startIdx - 1;
+    for (let i = startIdx; i < endIdx; i++) {
+        if (arr[i] < pivot) {
+            pos++;
+            [arr[i], arr[pos]] = [arr[pos], arr[i]];
+        }
+    }
+    [arr[pos + 1], arr[endIdx]] = [arr[endIdx], arr[pos + 1]];
+    return pos+1;
+}
+
+/**
+TC:
+    Best Case: O(nlogn)
+    Average Case: O(nlogn)
+    Worst Case: O(n^2) where the array is sorted so the end pivot will reuslt in checking all element
+
+SC:
+O(logn) - Recurrsion stack space. Rest O(1)
+Very Efiicient in terms of TC 
+
+Is Quick Sort stable: NO
+    because consider an array [3,1,5,4,1,2] , the sorted result will be [1,1,2,3,4]
+    Now the stable sorting algorithm ill gurantee that both the 1st will appear as per their order which means
+    the 1 which is present in 1st index will come first and at 4th index will come 2nd
+    But as quick sort is not stable it does guranteed the order of same element in an array
+
+Is Quick sort better than Merge Sort
+Yes beacuse is has O(1) Space compexity and fater execution
+ */
